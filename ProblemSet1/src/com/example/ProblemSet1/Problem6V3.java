@@ -53,13 +53,13 @@ public class Problem6V3 {
 
                 else
                 {
-                    x = JOptionPane.showInputDialog("1Invalid int, please re-enter");
+                    x = JOptionPane.showInputDialog("Invalid int, please re-enter");
                 }
             }
 
             else
             {
-                x = JOptionPane.showInputDialog("2Invalid int, please re-enter");
+                x = JOptionPane.showInputDialog("Invalid int, please re-enter");
             }
         }
 
