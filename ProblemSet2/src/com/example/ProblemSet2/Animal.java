@@ -71,8 +71,8 @@ public class Animal {
                     returning += " " +continents[i]+ ",";
 
                 }
-            }
-        }//End of for loop
+            }//End of for loop
+        }//End of if null
 
         //returning += "\nWeight %-10.2f \n%-4d";
 

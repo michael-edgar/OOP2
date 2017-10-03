@@ -24,7 +24,7 @@ public class Fraction {
 
     public int getDenominator()
     {
-        return getDenominator();
+        return denominator;
     }//End of getDenominator
 
     public Fraction()
@@ -40,8 +40,7 @@ public class Fraction {
 
     public String toString()
     {
-        return String.format("Numerator: %-5d \nDenominator: %-5d \nFraction: %-5d", numerator, denominator,
-                numerator+"/"+denominator);
+        return String.format("%-5s", numerator+"/"+denominator);
     }//End of toString
 
     public Fraction addFractions(Fraction f1, Fraction f2)
@@ -60,8 +59,8 @@ public class Fraction {
     {
         int numerator, denominator;
 
-        numerator = f1.getNumerator() - f2.getNumerator();
-        denominator = f1.getDenominator() - f2.getDenominator();
+        numerator = (f1.getNumerator()*f2.getDenominator()) - (f2.getNumerator()* f1.getDenominator());
+        denominator = f1.getDenominator()*f2.getDenominator();
 
         Fraction fAns = new Fraction(numerator, denominator);
 
