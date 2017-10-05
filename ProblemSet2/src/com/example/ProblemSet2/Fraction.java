@@ -47,8 +47,8 @@ public class Fraction {
     {
         int numerator, denominator;
 
-        numerator = f1.getNumerator() + f2.getNumerator();
-        denominator = f1.getDenominator() + f2.getDenominator();
+        numerator = (f1.getNumerator()*f2.getDenominator()) + (f2.getNumerator()* f1.getDenominator());
+        denominator = f1.getDenominator()*f2.getDenominator();
 
         Fraction fAns = new Fraction(numerator, denominator);
 
