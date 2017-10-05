@@ -2,6 +2,7 @@ package com.example.ProblemSet2;
 
 import javax.swing.JOptionPane;
 import java.util.*;
+import java.text.*;
 
 public class BorrowBook {
 
@@ -12,6 +13,7 @@ public class BorrowBook {
 
         String dayString, monthString, yearString;
         int day, month, year, lengthBorrowing;
+        SimpleDateFormat f = new SimpleDateFormat();
 
         yearString = JOptionPane.showInputDialog("Please enter the year you borrowed the book in the format YYYY");
         year = validYear(yearString);
@@ -35,7 +37,8 @@ public class BorrowBook {
 
         GregorianCalendar returnDate = new GregorianCalendar(year, month, day);
 
-        JOptionPane.showMessageDialog(null, "The borrow date is: " +borrowDate);
+        //JOptionPane.showMessageDialog(null, "The borrow date is: " +borrowDate.get(Calendar.DAY_OF_MONTH) +"/"+ borrowDate.get(Calendar.MONTH) + "/" + borrowDate.get(Calendar.YEAR));
+        JOptionPane.showMessageDialog(null, "The borrow date is: " +f.format(borrowDate));
 
         while(returnDate.before(borrowDate) || (borrowDate.get(Calendar.YEAR) != returnDate.get(Calendar.YEAR)))
         {
@@ -53,11 +56,11 @@ public class BorrowBook {
             returnDate = new GregorianCalendar(year, month, day);
         }
 
-        JOptionPane.showMessageDialog(null, "The return date is: " +returnDate);
+        JOptionPane.showMessageDialog(null, "The return date is: " +returnDate.get(Calendar.DAY_OF_MONTH) +"/"+ returnDate.get(Calendar.MONTH) + "/" + returnDate.get(Calendar.YEAR));
 
-        lengthBorrowing = (borrowDate.get(Calendar.DAY_OF_YEAR) + returnDate.get(Calendar.DAY_OF_YEAR));
+        lengthBorrowing = (returnDate.get(Calendar.DAY_OF_YEAR) - borrowDate.get(Calendar.DAY_OF_YEAR));
 
-        JOptionPane.showMessageDialog(null, "The length the book is borrowed is: " +lengthBorrowing);
+        JOptionPane.showMessageDialog(null, "The length the book is borrowed is: " +lengthBorrowing+ " days");
 
         System.exit(0);
 
@@ -71,7 +74,7 @@ public class BorrowBook {
 
         while(!valid)
         {
-            if(yearString.equals(""))
+            if(!yearString.equals(""))
             {
                 if(yearString.length() == 4)
                 {
@@ -143,7 +146,7 @@ public class BorrowBook {
                     {
                         month = Integer.parseInt(monthString);
 
-                        if(month >= 1 && month <= 12)
+                        if(month >= 0 && month <= 11)
                         {
                             valid = true;
                         }//End of if valid month
@@ -210,7 +213,7 @@ public class BorrowBook {
                             case 10:
                             case 12:
                             {
-                                if(day >= 1 && day <= 31)
+                                if(day >= 0 && day <= 30)
                                 {
                                     valid = true;
                                 }//End of if valid day
@@ -222,7 +225,7 @@ public class BorrowBook {
                             case 9:
                             case 11:
                             {
-                                if(day >= 1 && day <= 30)
+                                if(day >= 0 && day <= 29)
                                 {
                                     valid = true;
                                 }//End of if valid day
@@ -233,7 +236,7 @@ public class BorrowBook {
                             {
                                 if(leapYear = true)
                                 {
-                                    if(day >= 1 && day <= 29)
+                                    if(day >= 0 && day <= 28)
                                     {
                                         valid = true;
                                     }//End of valid day
@@ -241,7 +244,7 @@ public class BorrowBook {
 
                                 else
                                 {
-                                    if(day >= 1 && day <= 28)
+                                    if(day >= 0 && day <= 27)
                                     {
                                         valid = true;
                                     }//End of if valid day
