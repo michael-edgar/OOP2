@@ -5,7 +5,7 @@ package com.example.ProblemSet2;
  */
 public class VendingMachine {
 
-    private double [] size;
+    private double [] size = new double[3];
     private boolean [] coinHolder;
     private boolean greaterZero;
     private int [] spirals;
@@ -152,4 +152,14 @@ public class VendingMachine {
     {
         setCans((this.cans)+cans);
     }//End of fillUp
+
+    public int getCanCount()
+    {
+        return getCans();
+    }//End of getCanCount
+
+    public int getTokenCount()
+    {
+        return getCoinHolder().length;
+    }//End of getTokenCount
 }//End of Class
