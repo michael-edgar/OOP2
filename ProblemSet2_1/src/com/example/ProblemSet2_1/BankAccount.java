@@ -1,5 +1,7 @@
 package com.example.ProblemSet2_1;
 
+import javax.swing.*;
+
 public class BankAccount {
     private String accnum;
     private double balance;
@@ -52,4 +54,14 @@ public class BankAccount {
         setBalance(balance);
         setCustomer(customer);
     }//End of BankAccount
+
+    public void deposit(double money)
+    {
+        setBalance(getBalance()+money);
+    }//End of deposit
+
+    public void withdraw(double money)
+    {
+        setBalance(getBalance()-money);
+    }//End of withdraw
 }//End of BankAccount Class
