@@ -1,4 +1,4 @@
-package ProblemSet3;
+package Questions;
 
 public interface Taxable {
 

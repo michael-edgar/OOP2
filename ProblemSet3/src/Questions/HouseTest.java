@@ -1,4 +1,4 @@
-package ProblemSet3;
+package Questions;
 
 import javax.swing.JOptionPane;
 
@@ -18,8 +18,8 @@ public class HouseTest {
         h1.setType(JOptionPane.showInputDialog("Please enter the type of house for house 1"));
         h1.setPrice(Double.parseDouble(JOptionPane.showInputDialog("Please enter the price of house 1")));
         h1.setOwner(JOptionPane.showInputDialog("Please enter the name of the owner"),
-                    Integer.parseInt(JOptionPane.showInputDialog("Please enter the age of the owner")),
-                    JOptionPane.showInputDialog("Please enter the phone number of the owner"));
+                Integer.parseInt(JOptionPane.showInputDialog("Please enter the age of the owner")),
+                JOptionPane.showInputDialog("Please enter the phone number of the owner"));
 
         JOptionPane.showMessageDialog(null, h1);
 

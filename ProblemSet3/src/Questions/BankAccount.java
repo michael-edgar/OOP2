@@ -1,6 +1,6 @@
-package ProblemSet3;
+package Questions;
 
-public class BankAccount implements Transactable, Taxable{
+public abstract class BankAccount implements Transactable, Taxable{
 
     //attributes
     protected String name;
@@ -47,5 +47,5 @@ public class BankAccount implements Transactable, Taxable{
     public void setAccnum(int accnum)
     {
         this.accnum = accnum;
-    }
-}
+    }//End of setAccnum method
+}//End of BankAccount Class

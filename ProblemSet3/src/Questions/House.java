@@ -1,4 +1,4 @@
-package ProblemSet3;
+package Questions;
 
 import javax.swing.JOptionPane;
 
@@ -67,7 +67,7 @@ public class House extends Person{
     public House()
     {
         this("No Address Specified", "No Type Specified", 0.00f,
-            "No Owner Specified", 0, "No Phone Number Specified");
+                "No Owner Specified", 0, "No Phone Number Specified");
     }//End of no-argument constructor
 
     public House(String address, String type, double price, String name, int age, String phoneNo)
